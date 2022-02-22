@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.DAL", "HoliDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.DAL.Extensions", "HoliDayRental.DAL.Extensions\HoliDayRental.DAL.Extensions.csproj", "{72FDD925-2BB1-46CD-B671-CB33D9EA32CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HoliDayRental.DAL.Interfaces", "HoliDayRental.DAL.Interfaces\HoliDayRental.DAL.Interfaces.csproj", "{283536BF-6E24-4E0F-AEC5-F1A064048570}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{72FDD925-2BB1-46CD-B671-CB33D9EA32CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FDD925-2BB1-46CD-B671-CB33D9EA32CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FDD925-2BB1-46CD-B671-CB33D9EA32CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{283536BF-6E24-4E0F-AEC5-F1A064048570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{283536BF-6E24-4E0F-AEC5-F1A064048570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{283536BF-6E24-4E0F-AEC5-F1A064048570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{283536BF-6E24-4E0F-AEC5-F1A064048570}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
