@@ -8,4 +8,10 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HoliDayRental.DAL.Entities\HoliDayRental.DAL.Entities.csproj" />
+    <ProjectReference Include="..\HoliDayRental.DAL.Extensions\HoliDayRental.DAL.Extensions.csproj" />
+    <ProjectReference Include="..\HoliDayRental.DAL.Interfaces\HoliDayRental.DAL.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
