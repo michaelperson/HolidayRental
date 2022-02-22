@@ -1,4 +1,5 @@
 ﻿using HoliDayRental.DAL.Extensions;
+using HoliDayRental.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,7 @@ namespace HoliDayRental.DAL.Repositories
 {
     public abstract class BaseRepository<T, TKey> : IRepository<T, TKey>
         where T : IEntity<TKey>, new()
+        where TKey : struct
     {
         protected IDbTransaction _transaction;
         protected IDbConnection _connection { get { return _transaction.Connection; } }
@@ -21,7 +23,7 @@ namespace HoliDayRental.DAL.Repositories
         protected abstract string InsertCommand { get; }
         protected abstract string UpdateCommand { get; }
         protected abstract string DeleteCommand { get; }
-        protected virtual string OneCommand { get; }
+        protected abstract string OneCommand { get; }
       
 
 
@@ -40,7 +42,7 @@ namespace HoliDayRental.DAL.Repositories
                 Id = id
             }, _transaction);
         }
-        public virtual IEnumerable<T> Load()
+        public virtual IEnumerable<T> GetAll()
         {
             return _connection.Query<T>(SelectCommand, null, _transaction);
         }
@@ -142,4 +144,4 @@ namespace HoliDayRental.DAL.Repositories
     }
 }
 
-}
+

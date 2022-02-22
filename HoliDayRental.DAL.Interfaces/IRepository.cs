@@ -21,7 +21,7 @@ namespace HoliDayRental.DAL.Interfaces
         /// </summary>
         /// <param name="id">l'identifiant</param>
         /// <returns>A <seealso cref="{T}"/> object correspondant à l'Id ou au default(T)/> /></returns>
-        T GetOne(TKey id);
+        T GetOne(TKey id); 
 
         /// <summary>
         /// Methode qui retourne toutes les entités du <seealso cref="{T}"/>Type
@@ -35,7 +35,7 @@ namespace HoliDayRental.DAL.Interfaces
         /// </summary>
         /// <param name="Entity">L'entité à ajouter</param>
         /// <returns>True si c'est ok</returns>
-        int Add(T Entity);
+        bool Add(T Entity);
 
 
         /// <summary>
@@ -51,14 +51,13 @@ namespace HoliDayRental.DAL.Interfaces
         /// </summary>
         /// <param name="Entity">L'entité à updater</param>
         /// <returns>True si c'est ok</returns>
-        int Update(T Entity);
-
+        bool Update(T Entity);
 
         /// <summary>
         /// Methode pour supprimer une entité
         /// </summary>
         /// <param name="Entity">L'entité à supprimer</param>
         /// <returns>True si c'est ok</returns>
-        int Delete(TKey id);
+        bool Delete(TKey id);
     }
 }
