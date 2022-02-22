@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HoliDayRental.DAL.Repositories;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -30,8 +32,6 @@ namespace HoliDayRental.DAL
 
         }
 
-
-
         public bool Commit()
         {
             bool isOk = false;
@@ -53,8 +53,6 @@ namespace HoliDayRental.DAL
             return isOk;
         }
 
-
-
         protected virtual void Dispose(bool info = true)
         {
             if (_transaction != null)
@@ -75,6 +73,10 @@ namespace HoliDayRental.DAL
         {
             Dispose(true);
         }
+
+
+        public MembreRepository MembreRepository { get { return new MembreRepository(_transaction); }
+    }
     }
 }
-}
+

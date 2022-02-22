@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoliDayRental.DAL.Repositories;
+using System;
 
 namespace HoliDayRental.DAL
 {
@@ -9,6 +10,8 @@ namespace HoliDayRental.DAL
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
+        public MembreRepository MembreRepository { get; }
+
         bool Commit();
     }
 }
