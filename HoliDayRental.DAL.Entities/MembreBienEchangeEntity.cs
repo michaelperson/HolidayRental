@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.DAL.Entities
 {
-    public class MembreBienEchangeEntity:IEntity<(int,int)>
+    public class MembreBienEchangeEntity:IEntity<(int,int, DateTime, DateTime)>
     {
         private int _idmembre;
         private int _idbien;
@@ -23,6 +23,6 @@ namespace HoliDayRental.DAL.Entities
         public bool? Assurance { get => _assurance; set => _assurance = value; }
         public bool Valide { get => _valide; set => _valide = value; }
 
-        public (int, int) ID => (Idmembre,Idbien);
+        public (int, int, DateTime,DateTime) ID => (Idmembre,Idbien, Datedebechange,Datefinechange);
     }
 }

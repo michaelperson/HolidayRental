@@ -75,8 +75,20 @@ namespace HoliDayRental.DAL
         }
 
 
-        public MembreRepository MembreRepository { get { return new MembreRepository(_transaction); }
-    }
+        public MembreRepository MembreRepository =>  new MembreRepository(_transaction); 
+    
+
+    public AvisMembreBienRepository AvisMembreBienRepository => new AvisMembreBienRepository(_transaction);
+
+        public BienEchangeRepository BienEchangeRepository => new BienEchangeRepository(_transaction);
+
+        public MembreBienEchangeRepository MembreBienEchangeRepository => new MembreBienEchangeRepository(_transaction);
+
+        public OptionsBienRepository OptionsBienRepository => new OptionsBienRepository(_transaction);
+
+        public OptionsRepository OptionsRepository => new OptionsRepository(_transaction);
+
+        public PaysRepository PaysRepository => new PaysRepository(_transaction);
     }
 }
 

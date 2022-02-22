@@ -10,7 +10,17 @@ namespace HoliDayRental.DAL
     /// </summary>
     public interface IUnitOfWork : IDisposable
     {
+        public AvisMembreBienRepository AvisMembreBienRepository { get; }
+        public BienEchangeRepository BienEchangeRepository { get; }
+        public MembreBienEchangeRepository MembreBienEchangeRepository { get;}
+
         public MembreRepository MembreRepository { get; }
+
+        public OptionsBienRepository OptionsBienRepository { get; }
+
+        public OptionsRepository OptionsRepository { get; }
+
+        public PaysRepository PaysRepository { get; }
 
         bool Commit();
     }
