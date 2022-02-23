@@ -1,4 +1,5 @@
 using HoliDayRental.Infrastructure;
+using HoliDayRental.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +34,9 @@ namespace HoliDayRental
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });      //permet de configurer les sessions pour mon application
+
+
+            services.RegisterBLLServices();
 
             services.AddControllersWithViews();
         }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HoliDayRental.BLL.Services
+namespace HoliDayRental.BLL.Services.Interfaces
 {
     public class IBusinessService
     {

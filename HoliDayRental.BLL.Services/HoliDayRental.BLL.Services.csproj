@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\HoliDayRental.BLL.Models\HoliDayRental.BLL.Models.csproj" />
   </ItemGroup>
 
 </Project>

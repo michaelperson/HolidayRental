@@ -1,4 +1,5 @@
-﻿using HoliDayRental.Infrastructure.Helpers;
+﻿using HoliDayRental.BLL.Services.Interfaces;
+using HoliDayRental.Infrastructure.Helpers;
 using HoliDayRental.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,18 +14,18 @@ namespace HoliDayRental.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IHttpContextAccessor _httpContext;
-        public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContext )
+        private readonly ILogger<HomeController> _logger; 
+        private IBienEchangeService _bienService;
+        public HomeController(ILogger<HomeController> logger, IBienEchangeService _bienService )
         {
-            _logger = logger; 
-            _httpContext=httpContext;
+            _logger = logger;  
         }
 
         public IActionResult Index()
         {
-            _httpContext.HttpContext.Session.SetObjectAsJson("Titre", "Welcome");
-            return View();
+            HomeViewModel hm = new HomeViewModel(_bienService);
+             
+            return View(hm);
         }        
 
     }
