@@ -27,6 +27,7 @@ namespace HoliDayRental.BLL.Models
         private string _longitude;
         private int _idmembre;
         private DateTime _datecreation;
+        private string _paysNom;
 
         public int Idbien { get => _idbien; set => _idbien = value; }
         public string Titre { get => _titre; set => _titre = value; }
@@ -46,6 +47,6 @@ namespace HoliDayRental.BLL.Models
         public string Longitude { get => _longitude; set => _longitude = value; }
         public int Idmembre { get => _idmembre; set => _idmembre = value; }
         public DateTime Datecreation { get => _datecreation; set => _datecreation = value; }
-         
+        public string PaysName { get => _paysNom; set => _paysNom = value; }
     }
 }

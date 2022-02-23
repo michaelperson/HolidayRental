@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace HolidayRental.BLL.Mappers
 {
-    public class MapperConfig : MapperConfiguration
+    public static class MapperConfig
     {
-        public MapperConfig(MapperConfigurationExpression configurationExpression) : base(configurationExpression)
-        {
-        }
 
-        public  MapperConfiguration  Configure()
+        public static  MapperConfiguration  Configure()
         {
             return new MapperConfiguration(cfg => {
                 cfg.AddMaps(typeof(MapperConfig).Assembly) ;

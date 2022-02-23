@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HolidayRental.BLL.Mappers\HolidayRental.BLL.Mappers.csproj" />
     <ProjectReference Include="..\HoliDayRental.BLL.Models\HoliDayRental.BLL.Models.csproj" />
+    <ProjectReference Include="..\HoliDayRental.DAL\HoliDayRental.DAL.csproj" />
   </ItemGroup>
 
 </Project>

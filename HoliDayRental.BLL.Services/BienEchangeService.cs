@@ -1,5 +1,8 @@
-﻿using HoliDayRental.BLL.Models;
+﻿using AutoMapper;
+using HolidayRental.BLL.Mappers;
+using HoliDayRental.BLL.Models;
 using HoliDayRental.BLL.Services.Interfaces;
+using HoliDayRental.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +13,17 @@ namespace HoliDayRental.BLL.Services
 {
     public class BienEchangeService : IBienEchangeService
     {
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper mapper;
+        public BienEchangeService(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+            mapper=MapperConfig.Configure().CreateMapper();
+
+        }
         public IEnumerable<BienEchangeModel> Get3Last()
         {
-            throw new NotImplementedException();
+            return mapper.Map<IEnumerable<BienEchangeModel>>(_unitOfWork.BienEchangeRepository.GetWithPays().OrderByDescending(m => m.DateCreation).Take(3));
         }
 
         public IEnumerable<BienEchangeModel> GetAll()

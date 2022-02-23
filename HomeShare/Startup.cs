@@ -16,12 +16,14 @@ namespace HoliDayRental
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
+            Env = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Env { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -34,8 +36,14 @@ namespace HoliDayRental
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });      //permet de configurer les sessions pour mon application
-
-
+            if (Env.IsDevelopment())
+            {
+                services.RegisterDbConfig(Configuration.GetConnectionString("Dev"));
+            }
+            else
+            {
+                services.RegisterDbConfig(Configuration.GetConnectionString("Prod"));
+            }
             services.RegisterBLLServices();
 
             services.AddControllersWithViews();

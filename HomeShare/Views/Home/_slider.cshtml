@@ -1,0 +1,36 @@
+﻿@model IEnumerable<BienEchangeModel>
+        <div id="slider" class="sl-slider-wrapper">
+
+        <div class="sl-slider">
+        @foreach (BienEchangeModel item in Model)
+       {
+           <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+            <div class="sl-slide-inner">
+              <div class="bg-img " style="background-image:url(/images/biens/@item.Idbien/@item.Photo)"></div> <!---Balise style pour changer le background-->
+              <h2><a href="#">@item.Desccourte...</a></h2>
+              <blockquote>              
+              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> @item.Codepostal @item.Ville, @item.PaysName</p>
+              <p>@item.Titre</p>
+              <cite>Echanger</cite>
+              </blockquote>
+            </div>
+          </div>
+          <img src="/images/@item.Idbien/@item.Photo"/>
+       }
+       </div><!-- /sl-slider -->
+
+
+
+        <nav id="nav-dots" class="nav-dots">
+             <span class="nav-dot-current"></span>
+            @for (var i = 1; i < Model.Count(); i++)
+           {<span></span>
+               
+           }          
+        </nav>
+
+      </div><!-- /slider-wrapper -->
+
+          
+          
+        

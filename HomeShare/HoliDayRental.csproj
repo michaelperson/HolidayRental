@@ -5,11 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HoliDayRental.BLL.Services\HoliDayRental.BLL.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\biens\2\" />
+    <Folder Include="wwwroot\images\biens\3\" />
   </ItemGroup>
 
 </Project>

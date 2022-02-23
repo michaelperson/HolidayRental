@@ -16,16 +16,18 @@ namespace HoliDayRental.Controllers
     {
         private readonly ILogger<HomeController> _logger; 
         private IBienEchangeService _bienService;
-        public HomeController(ILogger<HomeController> logger, IBienEchangeService _bienService )
+        public HomeController(ILogger<HomeController> logger, IBienEchangeService bienService )
         {
             _logger = logger;  
+            _bienService= bienService;
         }
 
         public IActionResult Index()
         {
             HomeViewModel hm = new HomeViewModel(_bienService);
-             
+           
             return View(hm);
+
         }        
 
     }

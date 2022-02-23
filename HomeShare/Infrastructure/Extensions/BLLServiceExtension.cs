@@ -9,6 +9,7 @@ namespace HoliDayRental.Infrastructure.Extensions
 
         public  static void RegisterBLLServices(this IServiceCollection service)
         {
+             
             service.AddScoped<IBienEchangeService, BienEchangeService>();
         }
     }
