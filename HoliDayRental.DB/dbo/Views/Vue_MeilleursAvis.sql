@@ -1,12 +1,16 @@
-﻿CREATE VIEW [dbo].[Vue_MeilleursAvis]
+﻿CREATE VIEW dbo.Vue_MeilleursAvis
 AS
-SELECT     TOP (100) PERCENT dbo.BienEchange.idBien, dbo.BienEchange.titre, dbo.BienEchange.DescCourte, dbo.BienEchange.DescLong, dbo.BienEchange.NombrePerson, dbo.BienEchange.Pays, 
-                      dbo.BienEchange.Ville, dbo.BienEchange.Rue, dbo.BienEchange.Numero, dbo.BienEchange.CodePostal, dbo.BienEchange.Photo, dbo.BienEchange.AssuranceObligatoire, 
-                      dbo.BienEchange.isEnabled, dbo.BienEchange.DisabledDate, dbo.BienEchange.Latitude, dbo.BienEchange.Longitude, dbo.BienEchange.idMembre, dbo.BienEchange.DateCreation
-FROM         dbo.AvisMembreBien INNER JOIN
-                      dbo.BienEchange ON dbo.AvisMembreBien.idBien = dbo.BienEchange.idBien
-WHERE     (dbo.AvisMembreBien.note > 6)
-ORDER BY dbo.AvisMembreBien.note DESC
+SELECT        TOP (100) PERCENT idBien, titre, DescCourte, DescLong, NombrePerson, Pays, Ville, Rue, Numero, CodePostal, Photo, AssuranceObligatoire, isEnabled, DisabledDate, Latitude, Longitude, idMembre, DateCreation,
+                             (SELECT        AVG(note) AS Expr1
+                               FROM            dbo.AvisMembreBien
+                               WHERE        (idBien = dbo.BienEchange.idBien)) AS Moyenne
+FROM            dbo.BienEchange
+WHERE        (idBien IN
+                             (SELECT        idBien
+                               FROM            dbo.AvisMembreBien AS AvisMembreBien_1
+                               WHERE        (Approuve = 1)
+                               GROUP BY idBien
+                               HAVING         (AVG(note) > 6)))
 
 GO
 EXECUTE sp_addextendedproperty @name = N'MS_DiagramPane1', @value = N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
@@ -80,16 +84,6 @@ Begin DesignProperties =
          Left = 0
       End
       Begin Tables = 
-         Begin Table = "AvisMembreBien"
-            Begin Extent = 
-               Top = 6
-               Left = 38
-               Bottom = 219
-               Right = 198
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
          Begin Table = "BienEchange"
             Begin Extent = 
                Top = 6
@@ -127,6 +121,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'Vue_MeilleursAvis';
+
+
 
 
 GO

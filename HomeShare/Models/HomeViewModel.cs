@@ -22,5 +22,10 @@ namespace HoliDayRental.Models
         {
             get { return _bienService.GetTop10(); }
         }
+
+        public IEnumerable<BienEchangeAvisModel> Best
+        {
+            get { return _bienService.GetBest(); }
+        }
     }
 }

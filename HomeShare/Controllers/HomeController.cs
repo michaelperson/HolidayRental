@@ -24,10 +24,9 @@ namespace HoliDayRental.Controllers
 
         public IActionResult Index()
         {
-            HomeViewModel hm = new HomeViewModel(_bienService);
-           
+            HomeViewModel hm = new HomeViewModel(_bienService); 
             return View(hm);
-
+            
         }        
 
     }

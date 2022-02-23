@@ -9,7 +9,7 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
-USE [HoliDayRental]
+USE [HolyDayRental]
 GO
 SET IDENTITY_INSERT [dbo].[Options] ON 
 GO
@@ -77,6 +77,13 @@ INSERT [dbo].[BienEchange] ([idBien], [titre], [DescCourte], [DescLong], [Nombre
 GO
 INSERT [dbo].[BienEchange] ([idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) VALUES (3, N'Vue imprenable sur le grand Canyon', N'Maison perchée sur la falaise offrant une vue imprenable.', N'Vivre comme un aigle et respirer l''air pur.<br > Cette maison est un petit paradis perché offran lt confort moderne.', 1, 7, N'Colorado Sping', N'RockNRoll', N'10', N'784521', N'rockHouse.jpg', 1, 1, NULL, N'36.159420', N'-112.202579', 3, CAST(N'2015-03-06' AS Date))
 GO
+INSERT [dbo].[BienEchange] ([idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) VALUES (5, N'Paysage Lunaire', N'Maison tout confort sans gravité', N'Maison tout équipée vous permettant de voir le monde différemment', 1, 5, N'Luna', N'LoveGood', N'42', N'78542', N'moon.jpg', 1, 1, NULL, N'48.56365', N'1963.221', 4, CAST(N'2022-02-22' AS Date))
+GO
+INSERT [dbo].[BienEchange] ([idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) VALUES (6, N'Moderne et Confortable', N'Maison Moderne tout confort au coeur de NIce', N'Maison Moderne tout confort au coeur de Nice... Vivez la joie de cette ville en toute tranquilité', 10, 2, N'Nice', N'SaladeStreet', N'86', N'06000', N'nice.jpg', 1, 1, NULL, N'43.7101728', N'7.2619532
+', 4, CAST(N'2022-02-22' AS Date))
+GO
+INSERT [dbo].[BienEchange] ([idBien], [titre], [DescCourte], [DescLong], [NombrePerson], [Pays], [Ville], [Rue], [Numero], [CodePostal], [Photo], [AssuranceObligatoire], [isEnabled], [DisabledDate], [Latitude], [Longitude], [idMembre], [DateCreation]) VALUES (7, N'Riche propriété', N'Vue sur un grand parc dans cette ville de riches', N'Vivez dans le luxe et l''abondance dans cette maison typique de virginie', 5, 7, N'Falls Church', N'Grove Avenue', N'105', N'22040', N'3.jpg', 0, 1, NULL, N'38.892959668005126', N'-77.184089367827', 1, CAST(N'2022-01-12' AS Date))
+GO
 SET IDENTITY_INSERT [dbo].[BienEchange] OFF
 GO
 INSERT [dbo].[OptionsBien] ([idOption], [idBien], [Valeur]) VALUES (1, 2, N'Oui')
@@ -104,6 +111,16 @@ GO
 INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (4, 10, N'Quel merveille', 4, 3, CAST(N'2015-03-06T00:00:00.000' AS DateTime), 1)
 GO
 INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (5, 1, N'Vraiment n''importe quoi ce bien', 1, 2, CAST(N'2015-03-06T00:00:00.000' AS DateTime), 0)
+GO
+INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (6, 8, N'Trop beau', 1, 5, CAST(N'2022-02-02T00:00:00.000' AS DateTime), 1)
+GO
+INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (8, 10, N'Calme et tranquilité', 3, 2, CAST(N'2021-05-05T00:00:00.000' AS DateTime), 1)
+GO
+INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (9, 7, N'jolie maison', 1, 6, CAST(N'2017-02-02T00:00:00.000' AS DateTime), 1)
+GO
+INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (10, 8, N'J''ai vu passer Kim', 4, 7, CAST(N'2022-01-01T00:00:00.000' AS DateTime), 1)
+GO
+INSERT [dbo].[AvisMembreBien] ([idAvis], [note], [message], [idMembre], [idBien], [DateAvis], [Approuve]) VALUES (11, 10, N'Que d''eau', 4, 2, CAST(N'2022-02-03T00:00:00.000' AS DateTime), 1)
 GO
 SET IDENTITY_INSERT [dbo].[AvisMembreBien] OFF
 GO

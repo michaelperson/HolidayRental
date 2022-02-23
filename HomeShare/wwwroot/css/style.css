@@ -151,3 +151,18 @@ h2{font-size: 25px;}
     border: 1px solid #000;
 }
 
+
+.img-Square {
+    display: block;
+    height: 125px;
+    width: 200px;
+    max-height: 125px;
+    max-width: 200px;
+    min-height: 125px;
+    min-width: 200px;
+}
+.minHeightH4
+{
+    display:block;
+    min-height:50px;
+}

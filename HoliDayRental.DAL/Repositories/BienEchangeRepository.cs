@@ -34,5 +34,28 @@ FROM            BienEchange INNER JOIN
                          Pays ON BienEchange.Pays = Pays.idPays";
             return _connection.Query<BienEchangeEntity>(Commande, null, _transaction);
         }
+        public IEnumerable<BienEchangeEntity> GetTopAvis()
+        {
+            string Commande = @"SELECT  [idBien]
+      ,[titre]
+      ,[DescCourte]
+      ,[DescLong]
+      ,[NombrePerson]
+      ,[Pays]
+      ,[Ville]
+      ,[Rue]
+      ,[Numero]
+      ,[CodePostal]
+      ,[Photo]
+      ,[AssuranceObligatoire]
+      ,[isEnabled]
+      ,[DisabledDate]
+      ,[Latitude]
+      ,[Longitude]
+      ,[idMembre]
+      ,[DateCreation], Moyenne
+  FROM [HolyDayRental].[dbo].[Vue_MeilleursAvis]";
+            return _connection.Query<BienEchangeEntity>(Commande, null, _transaction);
+        }
     }
 }

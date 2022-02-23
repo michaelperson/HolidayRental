@@ -28,6 +28,7 @@ namespace HoliDayRental.DAL.Entities
         private int _idmembre;
         private DateTime _datecreation;
         private string _lepays;
+        private float _Moyenne;
 
         public int idBien { get => _idbien; set => _idbien = value; }
         public string titre { get => _titre; set => _titre = value; }
@@ -50,5 +51,7 @@ namespace HoliDayRental.DAL.Entities
 
         public string LePays { get => _lepays; set => _lepays = value; }
         public int ID => idBien;
+
+        public float Moyenne { get => _Moyenne; set => _Moyenne = value; }
     }
 }

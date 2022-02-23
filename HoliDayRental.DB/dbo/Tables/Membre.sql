@@ -7,6 +7,9 @@
     [Telephone] NVARCHAR (20)  NOT NULL,
     [Login]     NVARCHAR (50)  NOT NULL,
     [Password]  NVARCHAR (256) NOT NULL,
-    CONSTRAINT [PK_membre] PRIMARY KEY CLUSTERED ([idMembre] ASC)
+    CONSTRAINT [PK_membre] PRIMARY KEY CLUSTERED ([idMembre] ASC),
+    CONSTRAINT [FK_Membre_Pays] FOREIGN KEY ([Pays]) REFERENCES [dbo].[Pays] ([idPays])
 );
+
+
 

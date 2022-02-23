@@ -31,6 +31,12 @@ namespace HoliDayRental.BLL.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<BienEchangeAvisModel> GetBest()
+        {
+            return mapper.Map<IEnumerable<BienEchangeAvisModel>>(_unitOfWork.BienEchangeRepository.GetTopAvis().OrderByDescending(m => m.DateCreation));
+
+        }
+
         public IEnumerable<BienEchangeModel> GetTop10()
         {
             throw new NotImplementedException();

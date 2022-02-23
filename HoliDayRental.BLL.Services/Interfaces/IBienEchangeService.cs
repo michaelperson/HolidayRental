@@ -13,6 +13,7 @@ namespace HoliDayRental.BLL.Services.Interfaces
         IEnumerable<BienEchangeModel> Get3Last();
         IEnumerable<BienEchangeModel> GetTop10();
         IEnumerable<BienEchangeModel> GetAll();
+        IEnumerable<BienEchangeAvisModel> GetBest();
 
         IEnumerable<BienEchangeModel> Search(string critere);
 

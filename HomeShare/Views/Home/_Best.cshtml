@@ -1,0 +1,30 @@
+﻿@model  IEnumerable<BienEchangeAvisModel>
+@foreach (BienEchangeAvisModel item in Model)
+{
+    <div class="properties">
+        <div class="image-holder"><img src="/images/Biens/@item.Idbien/@item.Photo" class="img-Square"   alt="properties"/>
+            @{
+                string Etiquette="";
+                switch(item.Status)
+                {
+                    case BienEchangeAvisModel.EInfo.Bon: Etiquette="<div class='status sold'>Bon</div>"; break;
+                    case BienEchangeAvisModel.EInfo.Pepite: Etiquette = "<div class='status new'>Pépite</div>";break;
+                    default:Etiquette="<div></div>"; break;
+
+                }
+            }
+            @Html.Raw(Etiquette)
+        </div>
+        <h4 class="minHeightH4"><a href="#">@item.Titre</a></h4>
+        @if(item.Assuranceobligatoire)
+        {
+         @:<p class="price">Assurance obligatoire</p>
+        }
+        else
+        {
+         @:<p class="price">Pas d'assurance</p>
+        }
+        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Chiens admis"><img src="/images/icones/chien.png" width="25" /></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Lit double"><img src="/images/icones/chambre.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><img src="/images/icones/parking.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Cuisine"><img src="/images/icones/ustensiles-de-cuisine.png" width="25"/></span> </div>
+        <a class="btn btn-primary" href="#">Détails</a>
+      </div>
+}
