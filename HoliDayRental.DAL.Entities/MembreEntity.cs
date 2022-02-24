@@ -18,7 +18,7 @@ namespace HoliDayRental.DAL.Entities
         private string _login;
         private string _password;
 
-        public int IdMembre { get => _idMembre; set => _idMembre = value; }
+        public int idMembre { get => _idMembre; set => _idMembre = value; }
         public string Nom { get => _nom; set => _nom = value; }
         public string Prenom { get => _prenom; set => _prenom = value; }
         public string Email { get => _email; set => _email = value; }
@@ -27,6 +27,6 @@ namespace HoliDayRental.DAL.Entities
         public string Login { get => _login; set => _login = value; }
         public string Password { get => _password; set => _password = value; }
 
-        public int ID => IdMembre;
+        public int ID => idMembre;
     }
 }

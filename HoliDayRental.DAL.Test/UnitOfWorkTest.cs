@@ -22,7 +22,7 @@ namespace HoliDayRental.DAL.Test
             { new MembreEntity()
                                 {
                                     Email="test@test.be" ,
-                                    IdMembre=1,
+                                    idMembre=1,
                                     Login="test",
                                     Nom="Doe",
                                     Prenom="John",

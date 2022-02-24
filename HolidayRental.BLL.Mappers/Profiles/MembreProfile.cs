@@ -9,7 +9,18 @@ namespace HolidayRental.BLL.Mappers.Profiles
     {
         public MembreProfile()
         {
-            CreateMap<MembreModel, MembreEntity>();
+            CreateMap<MembreModel, MembreEntity>()
+                .ForMember(
+                Entity => Entity.idMembre,
+                Model => Model.MapFrom(m=>m.IdMembre)
+                )
+                .ReverseMap()
+                .ForMember(
+                Model => Model.IdMembre,
+                Entity => Entity.MapFrom(m => m.idMembre)
+                )
+                ;
+            
         }
     }
 }

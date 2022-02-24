@@ -1,4 +1,5 @@
 ﻿using HoliDayRental.Infrastructure.Helpers;
+using HoliDayRental.Models.Forms;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -25,12 +26,11 @@ namespace HoliDayRental.Controllers
             return View();
         }
 
-        //Exemple d'ajout de valeur pour une session permettant de spécifier que l'utilisateur est connecté
-        //[HttpPost]
-        //public IActionResult Register()
-        //{
-        //    _httpContext.HttpContext.Session.SetObjectAsJson("IsLogged", true);
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult Register(MembreInsertForm membre)
+        {
+           
+            return View();
+        }
     }
 }
