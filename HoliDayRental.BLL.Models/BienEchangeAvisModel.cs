@@ -33,8 +33,8 @@ namespace HoliDayRental.BLL.Models
         private string _longitude;
         private int _idmembre;
         private float _Moyenne;
-        private DateTime _datecreation; 
-
+        private DateTime _datecreation;
+        private IEnumerable<OptionsBienModel> _options;
 
         public int Idbien { get => _idbien; set => _idbien = value; }
         public string Titre { get => _titre; set => _titre = value; }
@@ -71,6 +71,7 @@ namespace HoliDayRental.BLL.Models
                     }
                 
                 }
-         
+
+        public IEnumerable<OptionsBienModel> Options { get => _options; set => _options = value; }
     }
 }

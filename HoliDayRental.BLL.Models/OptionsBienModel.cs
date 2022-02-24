@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace HoliDayRental.BLL.Models
 {
-    public class OptionsBienModel 
+    public class OptionsBienModel
     {
         private int _idoption;
         private int _idbien;
         private string _valeur;
+        private string _option;
 
-       
 
         public int Idoption { get => _idoption; set => _idoption = value; }
         public int Idbien { get => _idbien; set => _idbien = value; }
         public string Valeur { get => _valeur; set => _valeur = value; }
-         
+        public string Option { get => _option; set => _option = value; }
     }
 }

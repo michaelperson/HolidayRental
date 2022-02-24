@@ -1,4 +1,5 @@
 ﻿using HoliDayRental.DAL.Entities;
+using HoliDayRental.DAL.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,5 +24,15 @@ namespace HoliDayRental.DAL.Repositories
         protected override string DeleteCommand => "DELETE FROM OptionsBien WHERE @idOption=@Id1 AND @idBien= @Id2";
 
         protected override string OneCommand => "SELECT idOption,idBien,Valeur FROM OptionsBien WHERE @idOption=@Id1 AND @idBien= @Id2";
+
+        public IEnumerable<OptionsBienEntityWithName> GetByBien(int idbien)
+        {
+            string Commande = @"SELECT        Options.IdOption,  OptionsBien.IdBien, Options.Libelle, OptionsBien.Valeur
+FROM            Options INNER JOIN
+                         OptionsBien ON Options.idOption = OptionsBien.idOption
+WHERE        (OptionsBien.idBien = @id)";
+
+            return _connection.Query<OptionsBienEntityWithName>(Commande, new { id= idbien }, _transaction);
+        }
     }
 }

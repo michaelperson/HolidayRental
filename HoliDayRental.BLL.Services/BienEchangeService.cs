@@ -33,8 +33,13 @@ namespace HoliDayRental.BLL.Services
 
         public IEnumerable<BienEchangeAvisModel> GetBest()
         {
-            return mapper.Map<IEnumerable<BienEchangeAvisModel>>(_unitOfWork.BienEchangeRepository.GetTopAvis().OrderByDescending(m => m.DateCreation));
-
+           IEnumerable<BienEchangeAvisModel> models= mapper.Map<IEnumerable<BienEchangeAvisModel>>(_unitOfWork.BienEchangeRepository.GetTopAvis().OrderByDescending(m => m.DateCreation));
+            foreach (BienEchangeAvisModel item in models)
+            {
+                var t = _unitOfWork.OptionsBienRepository.GetByBien(item.Idbien);
+                item.Options = mapper.Map<IEnumerable<OptionsBienModel>>(t);
+            }
+            return models;
         }
 
         public IEnumerable<BienEchangeModel> GetTop10()

@@ -62,7 +62,7 @@ table{background-color: #fff;}
 .properties-listing div.properties .status{position: absolute;bottom: 0;z-index: 100;display: block;width: 100%;color: #fff;padding:0 3px;text-align: right; font-size: 12px;}
 .properties-listing div.properties p{margin-bottom: 10px; font-size: 14px;border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;padding: 5px 0;font-family: din;}
 
-.listing-detail{margin-bottom: 30px;}
+.listing-detail{margin-bottom: 30px; min-height:70px;}
 .listing-detail span{color: #fff; width: 35px; height: 35px; display: inline-block;border-radius:25px; text-align: center;line-height: 26px; font-size: 14px;cursor:  pointer;}
 .listing-detail span:hover{background: #72b70f;}
 

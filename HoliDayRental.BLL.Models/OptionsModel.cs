@@ -15,5 +15,6 @@ namespace HoliDayRental.BLL.Models
         public int Idoption { get => _idoption; set => _idoption = value; }
         public string Libelle { get => _libelle; set => _libelle = value; }
          
+        
     }
 }

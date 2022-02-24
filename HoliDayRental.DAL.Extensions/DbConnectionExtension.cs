@@ -318,7 +318,10 @@ namespace HoliDayRental.DAL.Extensions
                     try
                     {
                         //ajout de la valeur dans la proprieté
-                        typeof(T).GetProperty(Name).SetValue(retour, value);
+                        if (typeof(T).GetProperty(Name) != null)
+                        {
+                            typeof(T).GetProperty(Name).SetValue(retour, value);
+                        }
                     }
                     catch (Exception ex)
                     {

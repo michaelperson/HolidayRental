@@ -24,7 +24,16 @@
         {
          @:<p class="price">Pas d'assurance</p>
         }
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Chiens admis"><img src="/images/icones/chien.png" width="25" /></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Lit double"><img src="/images/icones/chambre.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><img src="/images/icones/parking.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Cuisine"><img src="/images/icones/ustensiles-de-cuisine.png" width="25"/></span> </div>
+        <div class="listing-detail">
+            @foreach (OptionsBienModel item2 in item.Options)
+           {
+               <picto text="@item2.Option"></picto>
+           }
+           @* <span data-toggle="tooltip" data-placement="bottom" data-original-title="Chiens admis">
+            <img src="/images/icones/chien.png" width="25" /></span> 
+            <span data-toggle="tooltip" data-placement="bottom" data-original-title="Lit double"><img src="/images/icones/chambre.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><img src="/images/icones/parking.png" width="25"/></span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Cuisine"><img src="/images/icones/ustensiles-de-cuisine.png" width="25"/></span> 
+*@        </div>
         <a class="btn btn-primary" href="#">Détails</a>
       </div>
 }
+
